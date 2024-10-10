@@ -10,7 +10,13 @@ class Myform(QWidget):
         super().__init__()
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
+        self.ui.okButton.clicked.connect(self.on_button_clicked)
         self.show()
+
+    def on_button_clicked(self):
+        name = self.ui.nameEdit.text()
+        self.ui.nameLabel.setText(f'Cześć {name}')
+
 
 
 if __name__ == '__main__' :
